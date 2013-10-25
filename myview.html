@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="plugins/bootstrap-editable/css/bootstrap-editable.css" />
+	
+<meta charset="UTF-8">
+<title> My View - xeditable project </title>
+	<style>
+		table {
+			border-collapse : collapse;
+			margin: auto ;
+		}
+		td {
+			width: 300px;
+			border: 1px solid #CCCCCC ;
+		}
+	</style>
+</head>
+<body>
+	<!-- Eg of use : we want to change via Ajax, employees' country  -->
+	<fieldset>
+		<legend> Employees</legend>
+		<table>
+			<tr>
+				<td> Name </td>
+				<td> Country </td>
+			</tr>
+			<tr>
+				<td> {$data.user} </td>
+				<td><a href="#" class="xedit" id="country" data-type="select" data-source="{$data.countries}" data-pk="{$data.id}" data-url="/post" data-title="Edit country">{$data.country}</a></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<!-- JQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<!-- Bootstrap - JAVASCRIPT - -->
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	
+	
+	<!-- We include the bootstrap-editable js -->
+	<script src="plugins/bootstrap-editable/js/bootstrap-editable.min.js"></script>
+	
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        	$('.xedit').editable({
+        		mode: 'inline' 
+        	});
+        });
+	</script>
+</body>
+</html>
